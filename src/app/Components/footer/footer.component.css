@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  margin: 0 auto;
+  line-height: 20px;
+  background-color: #F1EEEE;
+  border-radius: 0 0 20px 20px;
+  width:100%;
+  justify-content: center;
+  padding-bottom:40px;
+}
+.footerWrapper{
+  width:50%;
+  max-width: 400px;
+  min-width: 200px;
+  display:flex;
+  justify-content: space-around;
+}
+.footerText{
+  font-family: 'adcaregular';
+  font-size:14;
+}
+.redditSource{
+  cursor:pointer;
+}
+.voteBtn{
+  box-shadow: 6px 6px rgba(0,0,0,0.6);
+  border-radius:100px;
+}

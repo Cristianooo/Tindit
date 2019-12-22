@@ -1,0 +1,78 @@
+.toolbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #F1EEEE;
+  color: #1976d2;
+  font-weight: 600;
+  border-radius:20px 20px 0 0;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+.topSpread{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+}
+
+#headerTitle{
+  font-family: 'beattingvileregular';
+  font-size: 70px;
+}
+#account{
+  justify-content: flex-end;
+  align-self:flex-end;
+  margin-right:20px;
+  margin-bottom:5px;
+}
+#account b {
+  font-family: 'beattingvileregular';
+  font-size: 50px;
+  font-style:normal;
+
+}
+a {
+  text-decoration: none;
+  color: #1976d2;
+}
+a:link, a:visited {
+  color: #1976d2;
+}
+a:hover {
+  color: #1976d2;
+}
+#accountIcon{
+  display:none;
+}
+.left.inner-wrapper, .right.inner-wrapper {
+  flex: 1;
+  display: flex;
+  min-width: -webkit-min-content; /* Workaround to Chrome bug */
+}
+.left.inner-wrapper {
+  justify-content: flex-start;
+}
+@font-face {
+  font-family: 'beattingvileregular';
+  src: url('/assets/fonts/beattingvile-webfont.woff2') format('woff2'),
+  url('/assets/fonts/beattingvile-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@media screen and (max-width: 600px) {
+  #account b{
+    display:none;
+  }
+  #accountIcon{
+    display:block;
+    width:28px;
+    height:28px;
+    margin-bottom:20px;
+  }
+
+}

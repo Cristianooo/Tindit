@@ -1,0 +1,190 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+.buffer{
+  border-radius: 40px;
+  margin-top:-10px;
+  width:100%;
+  height:20px;
+  background-color: #333;
+}
+.content {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 ;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F1EEEE;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+
+}
+
+.card {
+  background:none;
+  height: 400px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+  display:flex;
+  justify-content: center;
+}
+#stats{
+  margin-top:20px;
+  display:flex;
+  flex-direction: column;
+  margin-right:40px;
+}
+#stats b {
+  font-family:'adcaregular';
+  font-size: 24px;
+  margin-bottom:20px;
+}
+#stats b small {
+  font-family:'adcaregular';
+  font-size: 10px;
+}
+.left.inner-wrapper, .right.inner-wrapper {
+  flex: 1;
+  display: flex;
+  min-width: -webkit-min-content; /* Workaround to Chrome bug */
+}
+.right.inner-wrapper {
+  justify-content: flex-end;
+}
+
+.card.card.highlight-card span {
+  margin-left: 60px;
+}
+
+.ask-to-join {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  background-color: grey;
+  border: 4px solid;
+  border-radius: 10px;
+}
+
+.ask-to-join-text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.ask-to-join-button {
+  background-color: blue;
+  border-color: lightblue;
+  position: relative;
+  color: white;
+  border-radius: 5px;
+  left: 46%;
+  width: 8%;
+  top: 60%;
+}
+
+.middleImage{
+  overflow-y: scroll;
+  width:auto;
+  max-height:100%;
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid #333;
+  box-shadow: 10px 10px 5px grey;
+  margin:auto;
+}
+.postTitle{
+  font-family: 'adcaregular';
+  font-size:26px;
+  color: #333;
+}
+
+/*Footer styles*/
+footer {
+  display: flex;
+  margin: 0 auto;
+  line-height: 20px;
+  background-color: #F1EEEE;
+  border-radius: 0 0 20px 20px;
+  width:100%;
+  justify-content: center;
+  padding-bottom:40px;
+}
+.footerWrapper{
+  width:50%;
+  max-width: 400px;
+  min-width: 200px;
+  display:flex;
+  justify-content: space-around;
+}
+.footerText{
+  font-family: 'adcaregular';
+  font-size:14;
+}
+.redditLink{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.redditSource{
+  cursor:pointer;
+}
+.voteBtn{
+  box-shadow: 6px 6px rgba(0,0,0,0.6);
+  border-radius:100px;
+}
+
+.animate-right {
+ animation-name: swiperight;
+ animation-duration: .5s;
+ animation-fill-mode: forwards;
+ animation-timing-function: ease-in;
+}
+.animate-left {
+ animation-name: swipeleft;
+ animation-duration: .5s;
+ animation-fill-mode: forwards;
+ animation-timing-function: ease-in;
+}
+@keyframes swipeleft {
+ 0% { transform: translate(0px, 0px) }
+    100% { transform: translate(-1000px, 0px) }
+}
+@keyframes swiperight {
+ 0% { transform: translate(0px, 0px) }
+    100% { transform: translate(1000px, 0px) }
+}
+
+@media screen and (max-width: 600px) {
+  .postTitle{
+    font-size:18px;
+  }
+
+  #stats{
+    display:none;
+  }
+}

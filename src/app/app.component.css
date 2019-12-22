@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'adcaregular';
+  src: url('/assets/fonts/adca-webfont.woff2') format('woff2'),
+  url('/assets/fonts/adca-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.masterDiv{
+   margin: 60px 60px auto;
+}
+
+
+@media screen and (max-width: 600px) {
+  .masterDiv{
+    /* margin: 10px 10px auto; */
+  }
+}

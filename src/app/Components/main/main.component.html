@@ -1,0 +1,55 @@
+<div class="buffer">
+
+</div>
+
+<div class="content" role="main" ngDefaultControl="">
+
+  <h2 class="postTitle">{{this.currPost.title}}</h2>
+
+  <div (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)" class="card-container">
+    <div class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
+      <img *ngIf="this.currPost.post_hint == 'image'" id="redditPostImage" class="middleImage" src="{{this.currPost.url}}">
+
+      <p *ngIf="this.currPost.post_hint == undefined" class="middleImage" id="redditPostText">{{this.currPost.selftext != "" ? this.currPost.selftext : '[No additional content]'}}</p>
+
+      <p *ngIf="this.currPost.post_hint == 'self'" class="middleImage" id="redditPostText">{{this.currPost.selftext != "" ? this.currPost.selftext : '[No additional content]'}}</p>
+
+      <div *ngIf="this.currPost.post_hint == 'hosted:video'" id="redditPostHostedVideo">
+        <video loop autoplay height=300 src="{{this.currPost.media.reddit_video.fallback_url}}"></video>
+        <audio loop autoplay src="{{this.currPost.url}}/audio"></audio>
+      </div>
+
+      <div *ngIf="this.currPost.post_hint == 'rich:video'" id="redditPostRichVideo">
+        {{this.displayRichVideo()}}
+      </div>
+
+      <a *ngIf="this.currPost.post_hint == 'link'" class="middleImage" id="redditPostLink" href="{{this.currPost.url}}" target="_blank"> {{'[[LINK]] ' + this.currPost.url}} </a>
+      <!-- Experimental handling of link (display in an iFrame): -->
+      <!-- <iframe *ngIf="this.currPost.post_hint == 'link'" class="" id="redditPostLink" src="" width="1000" height="400"> {{this.displayLink()}} </iframe> -->
+
+      <!-- Non-supported post types: -->
+      <!-- <p *ngIf="this.currPost.post_hint != undefined && !['image', 'hosted:video', 'rich:video', 'link'].includes(this.currPost.post_hint)" class="middleImage" id="redditPostText">{{this.currPost.post_hint}} is not supported by Tindit.</p> -->
+
+    </div>
+    <div *ngIf="this.shouldAskToJoin" class="ask-to-join">
+      <p class="ask-to-join-text">Won't you join us?</p>
+      <p class="ask-to-join-text">Click on "My Account" to sign up with Tindit</p>
+      <button type="button" class="ask-to-join-button" (click)="this.disableJoinPopup()" name="join-button">Okay</button>
+    </div>
+
+  </div>
+  <footer>
+    <div class="footerWrapper">
+      <a style="cursor:pointer;" (click)="downvotePost()"><img class ="voteBtn" src="/assets/images/downvote.png" width="46px" height="46px"></a>
+      <div class="redditLink">
+        <div class="footerText">View Original</div>
+        <a href="https://reddit.com/{{this.currPost.id}}" target="_blank"><img class="redditSource" src="/assets/images/reddit.png" width="40px" height="33.6px"></a>
+      </div>
+      <a style="cursor:pointer;" (click)="upvotePost()"><img class ="voteBtn" src="/assets/images/upvote.png" width="46px" height="46px"></a>
+
+    </div>
+  </footer>
+
+
+
+</div>

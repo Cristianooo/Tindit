@@ -1,0 +1,75 @@
+
+<div class="buffer">
+
+</div>
+
+<div class="content">
+<div class="profileContent">
+
+<div class="postViewer">
+  <div class="selectors">
+    <mat-form-field>
+      <mat-label>Submission Type</mat-label>
+      <mat-select [(ngModel)]="selectedSubtype" (ngModelChange) = "updateSubType()" name="subtype">
+        <mat-option *ngFor="let type of subTypes" [value]="type.value">
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Time Swiped</mat-label>
+      <mat-select [(ngModel)]="selectedTime"  (ngModelChange) = "updateTime()" name="time">
+        <mat-option *ngFor="let time of times" [value]="time.value">
+          {{time.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <h2>Upvotes</h2>
+    <ul class="list-group list-group-horizontal-md">
+      <li class="list-group-item text-wrap" *ngFor="let title of titles; let i = index;">{{titles[i].title}}</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Downvotes</h2>
+    <ul class="list-group list-group-horizontal-md">
+      <li class="list-group-item text-wrap" *ngFor="let downvote of downvoteTitles; let i = index;">
+        {{downvoteTitles[i].title}}
+
+      </li>
+    </ul>
+  </div>
+
+
+</div>
+  <div class="profileInfo">
+    <div class="profileName">
+      <span><b>Hello,</b> {{username}}</span>
+      <a><img class ="profileImg" src="/assets/images/paul.jpeg" width="46px" height="46px"></a>
+    </div>
+    <h1>Account Information</h1>
+    <div class="splitInfo"><b>Username:</b><input type="text" value = "{{username}}"name="username"><br></div>
+    <div class="splitInfo"><b>Password:</b><input type="text" name="password"><br></div>
+    <h1>Settings</h1>
+    <div id="settings">
+      <div>
+        <form class="example-form" [formGroup]="formGroup" (ngSubmit)="onFormSubmit(formGroup.value)" ngNativeValidate>
+          <mat-slide-toggle id="videoToggle" formControlName="toggleThoseVids" color="primary">Video Posts</mat-slide-toggle><br>
+          <mat-slide-toggle id="imageToggle" formControlName="toggleThosePics" color="primary">Picture Posts</mat-slide-toggle><br>
+          <mat-slide-toggle id="textToggle" formControlName="toggleThatText" color="primary">Text Posts</mat-slide-toggle><br>
+          <mat-slide-toggle id="sexyToggle" formControlName="toggleThatSexy" color="primary">NSFW Posts</mat-slide-toggle><br>
+          <button mat-raised-button type="submit">Save Settings</button>
+        </form>
+      </div>
+
+    </div>
+
+    <button style="align-self: flex-end;" (click)="signout()" mat-raised-button color="warn" >
+      Sign Out
+    </button>
+  </div>
+</div>
+
+</div>
